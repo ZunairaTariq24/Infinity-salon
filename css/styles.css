@@ -1,0 +1,370 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fdfbf8;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #222;
+}
+
+p {
+  color: #555;
+}
+
+/* Navbar Styles */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Playfair Display', serif;
+}
+
+.main-header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-header nav a.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f4bf64;
+}
+
+.btn-book {
+  background-color: #f4bf64;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #ffd670;
+  transform: translateY(-2px);
+}
+
+/* Service Section (Optional) */
+.services-section {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.services-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: #f8f2e9;
+  padding: 15px;
+  width: 250px;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+   margin: 5px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f4bf64;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #f4bf64;
+  font-weight: bold;
+}
+
+/* Footer Styles */
+.footer-section {
+  background-color: #f8f2e9;
+  padding: 40px 0;
+}
+
+.footer-section h5, 
+.footer-section h6 {
+  font-weight: bold;
+}
+
+.footer-section p, 
+.footer-section a {
+  color: #555;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #f4bf64;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .main-header nav {
+    margin-top: 10px;
+  }
+
+  .main-header nav a {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+
+  .btn-book {
+    margin-top: 10px;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.gallery-hero {
+  text-align: center;
+  padding: 100px 20px 50px;
+  background-color: #fdfbf8;
+}
+
+.gallery-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.gallery-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.gallery-section {
+  padding: 50px 0;
+}
+
+/* Nails Gallery Specific: Consistent Image Sizes */
+.gallery-grid {
+ display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #fff; /* Optional: to ensure background consistency */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;             /* Fixed uniform height */
+  object-fit: cover;         /* Ensures image fills box without distortion */
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-card-title {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+
+.hero-section {
+  position: relative;
+  background: url('../images/home_bg.PNG') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* 80% opacity image effect (white tint) */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.gallery1-item {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: 320px;          /* Optional: sets consistent container height */
+}
+
+.gallery1-item img {
+  width: 100%;
+  height: 100%;           /* Takes full height of container */
+  object-fit: cover;
+}
+.luxury-carousel img {
+  width: 100%;
+  height: 50%;            /* Same as your gallery fixed height */
+  object-fit: cover;        /* Ensures image fills frame without stretching */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
+.luxury-carousel .carousel-item {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;   /* This is for a 16:9 ratio (adjustable) */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.luxury-carousel .carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.testimonials-section {
+  background-color: #fdfbf8;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 12px;
+  min-height: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.testimonials-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #222;
+}
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-top: 6px;
+  font-weight: bold;
+}
