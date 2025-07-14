@@ -267,13 +267,9 @@ p {
 
 
 .hero-section {
+  background: url('images/hero.jpg') center/cover no-repeat;
   position: relative;
-  background: url('../images/home_bg.PNG') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #222;
+  min-height: 80vh;
 }
 
 .hero-overlay {
@@ -282,13 +278,14 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* 80% opacity image effect (white tint) */
+  background-color: rgba(255, 229, 204, 0.4); /* light skin tone */
+  z-index: 1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
+  z-index: 2;
 }
+
 .gallery1-item {
   overflow: hidden;
   border-radius: 15px;
